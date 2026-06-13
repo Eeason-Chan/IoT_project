@@ -21,29 +21,5 @@ class MonitoringService:
 
     @staticmethod
     def get_stats():
-        """Get data statistics."""
-        total = TrafficRecord.objects.count()
-        zones = TrafficRecord.objects.values('road_quality_score').distinct().count()
-        records = TrafficRecord.objects.all()
-
-        hours = set()
-        for r in records:
-            if r.hour is not None:
-                hours.add(r.hour)
-
-        time_range = {}
-        if records:
-            time_range = {'start': 'Hour 0', 'end': f'Hour {max(hours)}' if hours else 'Hour 23'}
-
-        # Update monitoring stats
-        MonitoringStats.objects.all().delete()
-        MonitoringStats.objects.create(
-            record_count=total,
-            zone_count=zones,
-        )
-
-        return {
-            'record_count': total,
-            'zone_count': zones,
-            'time_range': time_range
+        
         }
