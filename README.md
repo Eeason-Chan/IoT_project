@@ -20,5 +20,6 @@ cd frontend
 npm install
 npm run dev
 
-# 缺api和功能：StatsView接口和对应的功能
+缺api和功能：StatsView接口和对应的功能
+数据库配置看core/settings.py
 ```
