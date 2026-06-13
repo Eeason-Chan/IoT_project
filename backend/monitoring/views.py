@@ -16,5 +16,5 @@ class StatsView(APIView):
     """GET /api/system/stats - Data statistics"""
 
     def get(self, request):
-        data = MonitoringService.get_stats()
-        return Response(data)
+
+        return 
